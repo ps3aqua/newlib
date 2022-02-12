@@ -7,10 +7,10 @@
 #define FD_SETSIZE 1024
 #endif
 
-#define __fpos_t_defined
+#define __machine_fpos_t_defined
 typedef long long _fpos_t;
 
-#define __off_t_defined
+#define __machine_off_t_defined
 typedef long long _off_t;
 
 #endif // _MACHINE__TYPES_H
