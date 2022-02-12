@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/param.h>
 
 #define DT_INVALID			0xff
 #define DT_UNKNOWN			0
