@@ -54,7 +54,6 @@ SECTIONS
     KEEP (*(.fini_array))
     KEEP (*(SORT(.fini_array.*)))
     PROVIDE (__fini_array_end = .);
-    LONG(0); /* Sentinel.  */
 
   } > RAM
 
@@ -229,7 +228,7 @@ SECTIONS
 
   /* The rest are all not normally part of the runtime image.  */
 
-  .MP430.attributes 0 :
+  .MSP430.attributes 0 :
   {
     KEEP (*(.MSP430.attributes))
     KEEP (*(.gnu.attributes))

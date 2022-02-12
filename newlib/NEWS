@@ -1,3 +1,20 @@
+*** Major changes in newlib version 2.5.0:
+
+- memory.h added
+- some header file reorganization
+- doc fixes
+- ctype rewrite
+- added per-locale string functions
+- additional feature test macro overhaul
+
+*** Major changes in newlib version 2.4.0:
+
+- feature test macro overhaul
+- new string functions (e.g. timingsafe_bcmp)
+- new stdlib functions (e.g. arc4random)
+- simplified versioning macros for newlib
+- Changelog files deprecated
+
 *** Major changes in newlib version 2.3.0:
 
 - dynamic atexit logic fixed
