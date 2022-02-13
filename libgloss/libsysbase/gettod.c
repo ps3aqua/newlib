@@ -7,16 +7,9 @@
 #include <errno.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_gettimeofday_r,(r,ptimeval,ptimezone),
-	   struct _reent *r _AND
-	   struct timeval *ptimeval _AND
-	   void *ptimezone) {
+int _gettimeofday_r(struct _reent *r, struct timeval *ptimeval, void *ptimezone) {
 #else
-int
-_DEFUN(_gettimeofday,(ptimeval,ptimezone),
-	   struct timeval *ptimeval _AND
-	   void *ptimezone) {
+int _gettimeofday(struct timeval *ptimeval, void *ptimezone) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.gettod_r)

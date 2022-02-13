@@ -8,16 +8,9 @@
 #include <sys/syscalls.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_fstat64_r,(r,fd,st),
-	   struct _reent *r _AND
-	   int fd _AND
-	   struct stat *st) {
+int _fstat64_r(struct _reent *r, int fd, struct stat *st) {
 #else
-int
-_DEFUN(_fstat64,(fd,st),
-	   int fd _AND
-	   struct stat *st) {
+int _fstat64(int fd, struct stat *st) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.fstat64_r)

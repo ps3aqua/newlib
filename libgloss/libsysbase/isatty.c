@@ -6,14 +6,9 @@
 #include <sys/syscalls.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_isatty_r,(ptr,fd),
-	   struct _reent *ptr _AND
-		   int fd) {
+int _isatty_r(struct _reent *ptr, int fd) {
 #else
-int
-_DEFUN(isatty,(fd),
-	   int fd) {
+int isatty(int fd) {
 	struct _reent *ptr = _REENT;
 #endif
 	if(__syscalls.isatty_r)

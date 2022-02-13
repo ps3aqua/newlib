@@ -5,9 +5,7 @@
 #include <errno.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(usleep,(usec),
-	   useconds_t usec)
+int usleep(useconds_t usec)
 {
 	struct _reent *r = _REENT;
 
@@ -18,9 +16,7 @@ _DEFUN(usleep,(usec),
 	return -1;
 }
 
-unsigned int
-_DEFUN(sleep,(sec),
-	   unsigned int sec)
+unsigned int sleep(unsigned int sec)
 {
 	struct _reent *r = _REENT;
 

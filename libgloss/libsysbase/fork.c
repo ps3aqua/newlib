@@ -4,13 +4,9 @@
 #include <errno.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_fork_r,(r),
-	   struct _reent *r) {
+int _fork_r(struct _reent *r) {
 #else
-int
-_DEFUN(_fork,(),
-	   _NOARGS) {
+int _fork(void) {
 	struct _reent *r = _REENT;
 #endif
 	r->_errno = ENOSYS;

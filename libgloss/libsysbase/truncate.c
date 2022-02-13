@@ -6,10 +6,7 @@
 #include <fcntl.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(truncate,(path,len),
-	   const char *path _AND
-	   off_t len)
+int truncate(const char *path, off_t len)
 {
 	struct _reent *r = _REENT;
 

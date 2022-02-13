@@ -6,10 +6,7 @@
 #include <sys/resource.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(getrusage,(who,r_usage),
-	   int who _AND
-	   struct rusage *r_usage)
+int getrusage(int who, struct rusage *r_usage)
 {
 	struct _reent *r = _REENT;
 

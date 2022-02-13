@@ -7,9 +7,7 @@
 #include <sys/dirent.h>
 #include <sys/syscalls.h>
 
-long int
-_DEFUN(telldir,(dirp),
-	   DIR *dirp)
+long int telldir(DIR *dirp)
 {
 	struct _reent *r = _REENT;
 

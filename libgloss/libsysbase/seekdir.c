@@ -7,10 +7,7 @@
 #include <sys/dirent.h>
 #include <sys/syscalls.h>
 
-void
-_DEFUN(seekdir,(dirp,off),
-	   DIR *dirp _AND
-	   long int off)
+void seekdir(DIR *dirp, long int off)
 {
 	struct _reent *r = _REENT;
 

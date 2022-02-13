@@ -8,16 +8,9 @@
 #include <sys/syscalls.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_stat_r,(r,path,st),
-	   struct _reent *r _AND
-	   const char *path _AND
-	   struct stat *st) {
+int _stat_r(struct _reent *r, const char *path, struct stat *st) {
 #else
-int
-_DEFUN(_stat,(path,st),
-	   const char *path _AND
-	   struct stat *st) {
+int _stat(const char *path, struct stat *st) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.stat_r)

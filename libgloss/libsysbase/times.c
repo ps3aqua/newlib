@@ -7,14 +7,9 @@
 
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-clock_t
-_DEFUN(_times_r,(r,buf),
-	   struct _reent *r _AND
-	   struct tms *buf) {
+clock_t _times_r(struct _reent *r, struct tms *buf) {
 #else
-clock_t
-_DEFUN(_times,(buf),
-	   struct tms *buf) {
+clock_t _times(struct tms *buf) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.times_r)

@@ -7,10 +7,7 @@
 #include <sys/times.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(settimeofday,(ptimeval,ptimezone),
-	   const struct timeval *ptimeval _AND
-	   const struct timezone *ptimezone)
+int settimeofday(const struct timeval *ptimeval, const struct timezone *ptimezone)
 {
 	struct _reent *r = _REENT;
 

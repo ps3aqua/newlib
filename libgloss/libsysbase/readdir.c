@@ -7,9 +7,7 @@
 #include <sys/dirent.h>
 #include <sys/syscalls.h>
 
-struct dirent*
-_DEFUN(readdir,(dirp),
-	   DIR *dirp)
+struct dirent* readdir(DIR *dirp)
 {
 	struct _reent *r = _REENT;
 

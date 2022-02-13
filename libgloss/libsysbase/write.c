@@ -7,18 +7,9 @@
 
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-_ssize_t
-_DEFUN(_write_r,(r,fd,ptr,len),
-	   struct _reent *r _AND
-		   int fd _AND
-		   const void *ptr _AND
-		   size_t len) {
+_ssize_t _write_r(struct _reent *r, int fd, const void *ptr, size_t len) {
 #else
-_ssize_t
-_DEFUN(_write,(fd,ptr,len),
-	   int fd _AND
-	   const void *ptr _AND
-	   size_t len) {
+_ssize_t _write(int fd, const void *ptr, size_t len) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.write_r)

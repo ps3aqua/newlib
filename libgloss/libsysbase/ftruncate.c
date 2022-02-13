@@ -6,10 +6,7 @@
 #include <fcntl.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(ftruncate,(fd,len),
-	   int fd _AND
-	   off_t len)
+int ftruncate(int fd, off_t len)
 {
 	struct _reent *r = _REENT;
 

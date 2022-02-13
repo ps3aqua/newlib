@@ -5,18 +5,9 @@
 #include <sys/syscalls.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_execve_r,(r,name,argv,env),
-	   struct _reent *r _AND
-	   char *name _AND
-	   char **argv _AND
-	   char **env) {
+int _execve_r(struct _reent *r, char *name, char **argv, char **env) {
 #else
-int
-_DEFUN(_execve,(name,argv,env),
-	   char *name _AND
-	   char **argv _AND
-	   char **env) {
+int _execve(char *name, char **argv, char **env) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.execve_r)

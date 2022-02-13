@@ -6,9 +6,7 @@
 #include <fcntl.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(fsync,(fd),
-	   int fd)
+int fsync(int fd)
 {
 	struct _reent *r = _REENT;
 

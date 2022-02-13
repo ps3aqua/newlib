@@ -6,10 +6,7 @@
 #include <unistd.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(mkdir,(path,mode),
-	   const char *path _AND
-	   mode_t mode)
+int mkdir(const char *path, mode_t mode)
 {
 	struct _reent *r = _REENT;
 

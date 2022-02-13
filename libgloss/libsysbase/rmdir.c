@@ -6,9 +6,7 @@
 #include <errno.h>
 #include <sys/syscalls.h>
 
-int
-_DEFUN(rmdir,(dirname),
-	   const char *dirname)
+int rmdir(const char *dirname)
 {
 	struct _reent *r = _REENT;
 

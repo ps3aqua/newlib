@@ -7,14 +7,9 @@
 
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_close_r,(ptr,fd),
-	   struct _reent *ptr _AND
-	   int fd) {
+int _close_r(struct _reent *ptr, int fd) {
 #else
-int
-_DEFUN(_close,(fd),
-	   int fd) {
+int _close(int fd) {
 	struct _reent *ptr = _REENT;
 #endif
 	if(__syscalls.close_r)

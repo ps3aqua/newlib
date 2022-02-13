@@ -5,13 +5,9 @@
 #include <sys/syscalls.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-int
-_DEFUN(_getpid_r,(ptr),
-	   struct _reent *ptr) {
+int _getpid_r(struct _reent *ptr) {
 #else
-int
-_DEFUN(_getpid,(),
-	   _NOARGS) {
+int _getpid,(void) {
 	struct _reent *ptr = _REENT;
 #endif
 	if(__syscalls.getpid_r)
