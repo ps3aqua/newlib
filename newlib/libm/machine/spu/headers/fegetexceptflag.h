@@ -37,13 +37,14 @@
 #include <fenv.h>
 #include "headers/fefpscr.h"
 
-static __inline void _fegetexceptflag(fexcept_t *flagp, int excepts)
+static __inline int _fegetexceptflag(fexcept_t *flagp, int excepts)
 {
   vec_uint4 fpscr;
 
   excepts &= FE_ALL_EXCEPT;
   fpscr = spu_mffpscr();
   *flagp = __pack_fpscr(fpscr) & excepts;
+  return (0);
 }
 
 #endif /* _FEGETEXCEPTFLAG_H_ */

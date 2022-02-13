@@ -1,6 +1,6 @@
 #include "headers/feclearexcept.h"
 
-void feclearexcept(int excepts)
+int feclearexcept(int excepts)
 {
-    _feclearexcept(excepts);
+    return _feclearexcept(excepts);
 }

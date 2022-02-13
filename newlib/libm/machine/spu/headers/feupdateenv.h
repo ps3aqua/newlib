@@ -37,12 +37,13 @@
 #include <fenv.h>
 #include "headers/fefpscr.h"
 
-static __inline void _feupdateenv(const fenv_t *envp)
+static __inline int _feupdateenv(const fenv_t *envp)
 {
   vec_uint4 fpscr;
 
   fpscr = __unpack_fpscr(*envp);
   spu_mtfpscr(fpscr);
+  return (0);
 }
 
 #endif /* _FEUPDATEENV_H_ */

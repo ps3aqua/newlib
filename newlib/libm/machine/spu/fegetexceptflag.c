@@ -1,6 +1,6 @@
 #include "headers/fegetexceptflag.h"
 
-void fegetexceptflag(fexcept_t *flagp, int excepts)
+int fegetexceptflag(fexcept_t *flagp, int excepts)
 {
-    _fegetexceptflag(flagp, excepts);
+    return _fegetexceptflag(flagp, excepts);
 }

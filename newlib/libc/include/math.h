@@ -124,13 +124,17 @@ extern int isnanf (float);
 extern int isinfl (long double);
 extern int isnanl (long double);
 #endif
+#ifndef __SPU__
 #if !defined(__cplusplus) || __cplusplus < 201103L
 extern int isinf (double);
 #endif
+#endif
 #endif /* __MISC_VISIBLE */
+#ifndef __SPU__
 #if (__MISC_VISIBLE || (__XSI_VISIBLE && __XSI_VISIBLE < 600)) \
   && (!defined(__cplusplus) || __cplusplus < 201103L)
 extern int isnan (double);
+#endif
 #endif
 
 #if __ISO_C_VISIBLE >= 1999

@@ -37,7 +37,7 @@
 #include <fenv.h>
 #include "headers/fefpscr.h"
 
-static __inline void _feclearexcept(int excepts)
+static __inline int _feclearexcept(int excepts)
 {
   vec_uint4 fpscr, fpscr_mask;
 
@@ -46,6 +46,7 @@ static __inline void _feclearexcept(int excepts)
   fpscr_mask = __unpack_fpscr((fenv_t) excepts);
   fpscr = spu_and(fpscr, fpscr_mask);
   spu_mtfpscr(fpscr);
+  return (0);
 }
 
 #endif /* _FECLEAREXCEPT_H_ */

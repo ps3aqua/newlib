@@ -37,7 +37,7 @@
 #include <fenv.h>
 #include "headers/fefpscr.h"
 
-static __inline void _feraiseexcept(int excepts)
+static __inline int _feraiseexcept(int excepts)
 {
   vec_uint4 fpscr, big_except;
 
@@ -46,6 +46,7 @@ static __inline void _feraiseexcept(int excepts)
   big_except = __unpack_fpscr(excepts);
   fpscr = spu_or(fpscr, big_except);
   spu_mtfpscr(fpscr);
+  return (0);
 }
 
 #endif /* _FERAISEEXCEPT_H_ */

@@ -28,10 +28,10 @@ typedef	__sigset_t	sigset_t;
  * should be >= NOFILE (param.h).
  */
 #ifndef	FD_SETSIZE
-#define	FD_SETSIZE	1024
+#define	FD_SETSIZE	64
+typedef unsigned long	__fd_mask;
 #endif
 
-typedef unsigned int	__fd_mask;
 #if __BSD_VISIBLE
 typedef __fd_mask	fd_mask;
 #endif

@@ -37,7 +37,7 @@
 #include <fenv.h>
 #include "headers/fefpscr.h"
 
-static __inline void _fesetexceptflag(const fexcept_t *flagp, int excepts)
+static __inline int _fesetexceptflag(const fexcept_t *flagp, int excepts)
 {
   vec_uint4 fpscr;
   fenv_t mask, pack_fpscr;
@@ -47,6 +47,7 @@ static __inline void _fesetexceptflag(const fexcept_t *flagp, int excepts)
   mask = excepts & FE_ALL_EXCEPT;
   fpscr = __unpack_fpscr((pack_fpscr & ~mask) | (*flagp & mask));
   spu_mtfpscr(fpscr);
+  return (0);
 }
 
 #endif /* _FESETEXCEPTFLAG_H_ */

@@ -45,7 +45,9 @@
 __BEGIN_DECLS
 #if __MISC_VISIBLE || __POSIX_VISIBLE >= 200809 || __XSI_VISIBLE >= 700
 int	 alphasort(const struct dirent **, const struct dirent **);
+#if !defined(__lv2ppu__) && !defined(__SPU__)
 int	 dirfd(DIR *);
+#endif
 #endif
 #if __BSD_VISIBLE
 int	 fdclosedir(DIR *);

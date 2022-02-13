@@ -1,6 +1,6 @@
 #include "headers/feraiseexcept.h"
 
-void feraiseexcept(int excepts)
+int feraiseexcept(int excepts)
 {
-    _feraiseexcept(excepts);
+    return _feraiseexcept(excepts);
 }

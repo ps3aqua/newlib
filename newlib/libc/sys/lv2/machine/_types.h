@@ -5,6 +5,7 @@
 
 #ifndef FD_SETSIZE
 #define FD_SETSIZE 1024
+typedef unsigned int __fd_mask;
 #endif
 
 #define __machine_fpos_t_defined

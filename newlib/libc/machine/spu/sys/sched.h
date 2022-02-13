@@ -6,6 +6,10 @@ extern "C" {
 
 int sched_yield(void);
 
+struct sched_param {
+  int sched_priority;           /* Process execution scheduling priority */
+};
+
 #ifdef __cplusplus
 }
 #endif

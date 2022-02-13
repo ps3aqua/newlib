@@ -842,7 +842,7 @@ newlib_cflags="${newlib_cflags} -DCLOCK_PROVIDED -DMALLOC_PROVIDED -DEXIT_PROVID
   moxie-*-elf* | moxie-*-rtems*)
         syscall_dir=syscalls
 	default_newlib_io_long_long="yes"
-	;;
+        ;;
   moxie-*-moxiebox)
         syscall_dir=syscalls
 	default_newlib_io_long_long="yes"

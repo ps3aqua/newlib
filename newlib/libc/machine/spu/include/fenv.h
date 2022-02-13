@@ -41,10 +41,10 @@ extern "C" {
 #endif
 
 /* Exception */
-void feclearexcept(int excepts);
-void fegetexceptflag(fexcept_t *flagp, int excepts);
-void feraiseexcept(int excepts);
-void fesetexceptflag(const fexcept_t *flagp, int excepts);
+int feclearexcept(int excepts);
+int fegetexceptflag(fexcept_t *flagp, int excepts);
+int feraiseexcept(int excepts);
+int fesetexceptflag(const fexcept_t *flagp, int excepts);
 int fetestexcept(int excepts);
 
 /* Rounding mode */
@@ -52,10 +52,10 @@ int fegetround(void);
 int fesetround(int rounding_mode);
 
 /* Float environment */
-void fegetenv(fenv_t *envp);
+int fegetenv(fenv_t *envp);
 int feholdexcept(fenv_t *envp);
-void fesetenv(const fenv_t *envp);
-void feupdateenv(const fenv_t *envp);
+int fesetenv(const fenv_t *envp);
+int feupdateenv(const fenv_t *envp);
 
 #ifdef __cplusplus
 }
