@@ -102,3 +102,6 @@ endif
 if CONFIG_WINCE
 include wince/Makefile.inc
 endif
+if CONFIG_XTENSA
+include xtensa/Makefile.inc
+endif

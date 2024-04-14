@@ -285,6 +285,12 @@ case "${host_cpu}" in
 	machine_dir=nvptx
 	newlib_cflags="${newlib_cflags} -DCLOCK_PROVIDED -DMALLOC_PROVIDED"
 	;;
+  powerpc64-ps3-elf)
+	default_newlib_io_long_long="yes"
+	newlib_cflags="${newlib_cflags} -DREENTRANT_SYSCALLS_PROVIDED"
+	newlib_cflags="${newlib_cflags} -ffunction-sections -fdata-sections"
+	syscall_dir=syscalls
+	;;
   or1k*|or1knd*)
 	machine_dir=or1k
 	have_init_fini=no
@@ -365,6 +371,13 @@ case "${host_cpu}" in
 	newlib_cflags="${newlib_cflags} -DMALLOC_PROVIDED"
 	newlib_cflags="${newlib_cflags} -DPREFER_SIZE_OVER_SPEED"
         ;;
+  xtensa)
+	libm_machine_dir=xtensa
+	machine_dir=xtensa
+	newlib_cflags="${newlib_cflags} -mlongcalls"
+	default_newlib_atexit_dynamic_alloc="no"
+	have_init_fini=no
+	;;
   z8k)
 	machine_dir=z8k
 	;;
@@ -573,6 +586,9 @@ case "${host}" in
   w65-*-*)
 	sys_dir=w65
 	;;
+  xtensa*-*-*)
+	sys_dir=xtensa
+	;;
   z8k-*-coff)
 	sys_dir=z8ksim
 	;;
@@ -591,7 +607,7 @@ case "${host}" in
 	default_newlib_io_long_double="yes"
 	default_newlib_io_pos_args="yes"
 	CC="${CC} -I${cygwin_srcdir}/include"
-	newlib_cflags="${newlib_cflags} -DHAVE_OPENDIR -DHAVE_RENAME -DGETREENT_PROVIDED -DSIGNAL_PROVIDED -DHAVE_BLKSIZE -DHAVE_FCNTL -DMALLOC_PROVIDED"
+	newlib_cflags="${newlib_cflags} -DHAVE_OPENDIR -DHAVE_RENAME -DGETREENT_PROVIDED -DSIGNAL_PROVIDED -DHAVE_BLKSIZE -DHAVE_FCNTL -DMALLOC_PROVIDED -DHAVE_CHDIR -DHAVE_FCHDIR"
 	syscall_dir=syscalls
 	;;
 # RTEMS supplies its own versions of some routines:
@@ -869,6 +885,9 @@ newlib_cflags="${newlib_cflags} -DCLOCK_PROVIDED -DMALLOC_PROVIDED -DEXIT_PROVID
           syscall_dir=syscalls
         ;;
   xstormy16-*-*)
+	syscall_dir=syscalls
+	;;
+  xtensa*-*-* | xtensa*-*)
 	syscall_dir=syscalls
 	;;
   z8k-*-*)
