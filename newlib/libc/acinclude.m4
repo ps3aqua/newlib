@@ -17,6 +17,7 @@ m4_foreach_w([SYS_DIR], [
   epiphany
   h8300hms h8500hms
   m88kbug mmixware
+  lv2
   netware
   or1k
   rdos rtems

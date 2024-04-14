@@ -171,6 +171,7 @@ check_PROGRAMS = $(am__EXEEXT_2) $(am__EXEEXT_3)
 @CONFIG_IQ2000_TRUE@am__append_24 = iq2000/libeval.a
 @CONFIG_IQ2000_TRUE@am__append_25 = iq2000/crt0.S iq2000/test.o
 @CONFIG_IQ2000_TRUE@am__append_26 = iq2000/test
+@CONFIG_LIBSYSBASE_TRUE@am__append_282 = libsysbase/libsysbase.a
 @CONFIG_LIBNOSYS_TRUE@am__append_27 = libnosys/nosys.specs
 @CONFIG_LIBNOSYS_TRUE@am__append_28 = libnosys/libnosys.a
 @CONFIG_LM32_TRUE@am__append_29 = lm32/crt0.o lm32/sim.ld
@@ -421,6 +422,61 @@ libobjs_a_LIBADD =
 am_libobjs_a_OBJECTS = $(am__objects_3) $(am__objects_4) \
 	$(am__objects_5) $(am__objects_6)
 libobjs_a_OBJECTS = $(am_libobjs_a_OBJECTS)
+libsysbase_libsysbase_a_AR = $(AR) $(ARFLAGS)
+libsysbase_libsysbase_a_LIBADD =
+@CONFIG_LIBSYSBASE_TRUE@am_libsysbase_libsysbase_a_OBJECTS =  \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/_exit.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/abort.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/access.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/chdir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/chmod.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/close.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/closedir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/dup.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/environ.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/execve.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fork.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fstat.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fstat64.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fsync.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/ftruncate.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/getpid.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/getrusage.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/gettod.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/glob.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/globfree.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/isatty.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/kill.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/link.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/lock.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/lseek.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/lseek64.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/mkdir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/open.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/opendir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/read.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/readdir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/readdir_r.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/rename.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/rewinddir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/rmdir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/sbrk.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/seekdir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/settod.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/sleep.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/stat.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/stat64.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/syscalls.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/telldir.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/times.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/truncate.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/umask.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/unlink.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/utime.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/wait.$(OBJEXT) \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/write.$(OBJEXT)
+libsysbase_libsysbase_a_OBJECTS =  \
+	$(am_libsysbase_libsysbase_a_OBJECTS)
 lm32_libgloss_a_AR = $(AR) $(ARFLAGS)
 lm32_libgloss_a_LIBADD =
 @CONFIG_LM32_TRUE@am_lm32_libgloss_a_OBJECTS = lm32/isatty.$(OBJEXT) \
@@ -571,7 +627,7 @@ SOURCES = $(aarch64_librdimon_a_SOURCES) $(arc_libnsim_a_SOURCES) \
 	$(arm_librdimon_a_SOURCES) $(arm_librdpmon_a_SOURCES) \
 	$(bfin_libbfinbsp_a_SOURCES) $(bfin_libsim_a_SOURCES) \
 	$(csky_libsemi_a_SOURCES) $(d30v_libsim_a_SOURCES) \
-	$(iq2000_libeval_a_SOURCES) $(libnosys_libnosys_a_SOURCES) \
+	$(iq2000_libeval_a_SOURCES) $(libnosys_libnosys_a_SOURCES) $(libsysbase_libsysbase_a_SOURCES) \
 	$(libobjs_a_SOURCES) $(lm32_libgloss_a_SOURCES) \
 	$(nios2_libnios2_a_SOURCES) $(riscv_libgloss_a_SOURCES) \
 	$(riscv_libsemihost_a_SOURCES) bfin/sim-test.c iq2000/test.c \
@@ -801,7 +857,7 @@ multilibtool_DATA = $(am__append_3) $(am__append_6) $(am__append_7) \
 	$(am__append_34)
 multilibtool_LIBRARIES = $(am__append_2) $(am__append_5) \
 	$(am__append_9) $(am__append_11) $(am__append_20) \
-	$(am__append_21) $(am__append_24) $(am__append_28) \
+	$(am__append_21) $(am__append_24) $(am__append_28) $(am__append_282) \
 	$(am__append_30) $(am__append_33) $(am__append_35)
 includetooldir = $(tooldir)/include
 includetool_DATA = $(am__append_16)
@@ -966,6 +1022,58 @@ TEXINFO_TEX = ../texinfo/texinfo.tex
 @CONFIG_IQ2000_TRUE@	iq2000/kill.c iq2000/lseek.c iq2000/open.c iq2000/read.c \
 @CONFIG_IQ2000_TRUE@	iq2000/sbrk.c iq2000/stat.c iq2000/time.c iq2000/trap.c iq2000/unlink.c iq2000/utime.c iq2000/write.c
 
+@CONFIG_LIBSYSBASE_TRUE@libsysbase_libsysbase_a_SOURCES = \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/_exit.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/abort.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/access.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/chdir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/chmod.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/close.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/closedir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/dup.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/environ.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/execve.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fork.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fstat.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fstat64.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/fsync.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/ftruncate.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/getpid.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/getrusage.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/gettod.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/glob.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/globfree.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/isatty.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/kill.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/link.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/lock.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/lseek.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/lseek64.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/mkdir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/open.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/opendir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/read.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/readdir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/readdir_r.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/rename.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/rewinddir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/rmdir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/sbrk.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/seekdir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/settod.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/sleep.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/stat.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/stat64.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/syscalls.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/telldir.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/times.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/truncate.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/umask.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/unlink.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/utime.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/wait.c \
+@CONFIG_LIBSYSBASE_TRUE@	libsysbase/write.c
+
 @CONFIG_LIBNOSYS_TRUE@libnosys_libnosys_a_SOURCES = \
 @CONFIG_LIBNOSYS_TRUE@	libnosys/chown.c \
 @CONFIG_LIBNOSYS_TRUE@	libnosys/close.c \
@@ -1099,7 +1207,7 @@ all: config.h
 .SUFFIXES: .S .c .dvi .o .obj .ps
 am--refresh: Makefile
 	@:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/../multilib.am $(srcdir)/doc/Makefile.inc $(srcdir)/aarch64/Makefile.inc $(srcdir)/aarch64/cpu-init/Makefile.inc $(srcdir)/arc/Makefile.inc $(srcdir)/arm/Makefile.inc $(srcdir)/arm/cpu-init/Makefile.inc $(srcdir)/bfin/Makefile.inc $(srcdir)/csky/Makefile.inc $(srcdir)/d30v/Makefile.inc $(srcdir)/iq2000/Makefile.inc $(srcdir)/libnosys/Makefile.inc $(srcdir)/lm32/Makefile.inc $(srcdir)/nios2/Makefile.inc $(srcdir)/riscv/Makefile.inc $(srcdir)/wince/Makefile.inc $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/../multilib.am $(srcdir)/doc/Makefile.inc $(srcdir)/aarch64/Makefile.inc $(srcdir)/aarch64/cpu-init/Makefile.inc $(srcdir)/arc/Makefile.inc $(srcdir)/arm/Makefile.inc $(srcdir)/arm/cpu-init/Makefile.inc $(srcdir)/bfin/Makefile.inc $(srcdir)/csky/Makefile.inc $(srcdir)/d30v/Makefile.inc $(srcdir)/iq2000/Makefile.inc $(srcdir)/libsysbase/Makefile.inc $(srcdir)/libnosys/Makefile.inc $(srcdir)/lm32/Makefile.inc $(srcdir)/nios2/Makefile.inc $(srcdir)/riscv/Makefile.inc $(srcdir)/wince/Makefile.inc $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -1121,7 +1229,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
 	esac;
-$(top_srcdir)/../multilib.am $(srcdir)/doc/Makefile.inc $(srcdir)/aarch64/Makefile.inc $(srcdir)/aarch64/cpu-init/Makefile.inc $(srcdir)/arc/Makefile.inc $(srcdir)/arm/Makefile.inc $(srcdir)/arm/cpu-init/Makefile.inc $(srcdir)/bfin/Makefile.inc $(srcdir)/csky/Makefile.inc $(srcdir)/d30v/Makefile.inc $(srcdir)/iq2000/Makefile.inc $(srcdir)/libnosys/Makefile.inc $(srcdir)/lm32/Makefile.inc $(srcdir)/nios2/Makefile.inc $(srcdir)/riscv/Makefile.inc $(srcdir)/wince/Makefile.inc $(am__empty):
+$(top_srcdir)/../multilib.am $(srcdir)/doc/Makefile.inc $(srcdir)/aarch64/Makefile.inc $(srcdir)/aarch64/cpu-init/Makefile.inc $(srcdir)/arc/Makefile.inc $(srcdir)/arm/Makefile.inc $(srcdir)/arm/cpu-init/Makefile.inc $(srcdir)/bfin/Makefile.inc $(srcdir)/csky/Makefile.inc $(srcdir)/d30v/Makefile.inc $(srcdir)/iq2000/Makefile.inc $(srcdir)/libsysbase/Makefile.inc $(srcdir)/libnosys/Makefile.inc $(srcdir)/lm32/Makefile.inc $(srcdir)/nios2/Makefile.inc $(srcdir)/riscv/Makefile.inc $(srcdir)/wince/Makefile.inc $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	$(SHELL) ./config.status --recheck
@@ -1589,7 +1697,117 @@ lm32/isatty.$(OBJEXT): lm32/$(am__dirstamp) \
 	lm32/$(DEPDIR)/$(am__dirstamp)
 lm32/scall.$(OBJEXT): lm32/$(am__dirstamp) \
 	lm32/$(DEPDIR)/$(am__dirstamp)
+libsysbase/$(am__dirstamp):
+	@$(MKDIR_P) libsysbase
+	@: > libsysbase/$(am__dirstamp)
+libsysbase/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) libsysbase/$(DEPDIR)
+	@: > libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/_exit.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/abort.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/access.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/chdir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/chmod.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/close.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/closedir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/dup.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/environ.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/execve.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/fork.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/fstat.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/fstat64.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/fsync.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/ftruncate.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/getpid.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/getrusage.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/gettod.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/glob.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/globfree.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/isatty.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/kill.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/link.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/lock.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/lseek.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/lseek64.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/mkdir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/open.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/opendir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/read.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/readdir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/readdir_r.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/rename.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/rewinddir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/rmdir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/sbrk.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/seekdir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/settod.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/sleep.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/stat.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/stat64.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/syscalls.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/telldir.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/times.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/truncate.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/umask.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/unlink.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/utime.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/wait.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
+libsysbase/write.$(OBJEXT): libsysbase/$(am__dirstamp) \
+	libsysbase/$(DEPDIR)/$(am__dirstamp)
 
+libsysbase/libsysbase.a: $(libsysbase_libsysbase_a_OBJECTS) $(libsysbase_libsysbase_a_DEPENDENCIES) $(EXTRA_libsysbase_libsysbase_a_DEPENDENCIES) libsysbase/$(am__dirstamp)
+	$(AM_V_at)-rm -f libsysbase/libsysbase.a
+	$(AM_V_AR)$(libsysbase_libsysbase_a_AR) libsysbase/libsysbase.a $(libsysbase_libsysbase_a_OBJECTS) $(libsysbase_libsysbase_a_LIBADD)
+	$(AM_V_at)$(RANLIB) libsysbase/libsysbase.a
 lm32/libgloss.a: $(lm32_libgloss_a_OBJECTS) $(lm32_libgloss_a_DEPENDENCIES) $(EXTRA_lm32_libgloss_a_DEPENDENCIES) lm32/$(am__dirstamp)
 	$(AM_V_at)-rm -f lm32/libgloss.a
 	$(AM_V_AR)$(lm32_libgloss_a_AR) lm32/libgloss.a $(lm32_libgloss_a_OBJECTS) $(lm32_libgloss_a_LIBADD)
@@ -1852,6 +2070,7 @@ mostlyclean-compile:
 	-rm -f d30v/*.$(OBJEXT)
 	-rm -f iq2000/*.$(OBJEXT)
 	-rm -f libnosys/*.$(OBJEXT)
+	-rm -f libsysbase/*.$(OBJEXT)
 	-rm -f lm32/*.$(OBJEXT)
 	-rm -f nios2/*.$(OBJEXT)
 	-rm -f riscv/*.$(OBJEXT)
@@ -1973,6 +2192,56 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@libnosys/$(DEPDIR)/unlink.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libnosys/$(DEPDIR)/wait.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@libnosys/$(DEPDIR)/write.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/_exit.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/abort.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/access.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/chdir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/chmod.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/close.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/closedir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/dup.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/environ.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/execve.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/fork.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/fstat.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/fstat64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/fsync.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/ftruncate.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/getpid.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/getrusage.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/gettod.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/glob.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/globfree.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/isatty.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/kill.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/link.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/lock.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/lseek.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/lseek64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/mkdir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/open.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/opendir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/read.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/readdir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/readdir_r.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/rename.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/rewinddir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/rmdir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/sbrk.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/seekdir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/settod.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/sleep.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/stat.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/stat64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/syscalls.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/telldir.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/times.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/truncate.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/umask.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/unlink.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/utime.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/wait.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@libsysbase/$(DEPDIR)/write.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@lm32/$(DEPDIR)/crt0.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@lm32/$(DEPDIR)/isatty.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@lm32/$(DEPDIR)/scall.Po@am__quote@
@@ -4220,6 +4489,8 @@ distclean-generic:
 	-rm -f iq2000/$(am__dirstamp)
 	-rm -f libnosys/$(DEPDIR)/$(am__dirstamp)
 	-rm -f libnosys/$(am__dirstamp)
+	-rm -f libsysbase/$(DEPDIR)/$(am__dirstamp)
+	-rm -f libsysbase/$(am__dirstamp)
 	-rm -f lm32/$(DEPDIR)/$(am__dirstamp)
 	-rm -f lm32/$(am__dirstamp)
 	-rm -f nios2/$(DEPDIR)/$(am__dirstamp)
@@ -4239,7 +4510,7 @@ clean-am: clean-aminfo clean-binPROGRAMS clean-checkPROGRAMS \
 
 distclean: distclean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-	-rm -rf ./$(DEPDIR) aarch64/$(DEPDIR) arc/$(DEPDIR) arm/$(DEPDIR) bfin/$(DEPDIR) csky/$(DEPDIR) d30v/$(DEPDIR) iq2000/$(DEPDIR) libnosys/$(DEPDIR) lm32/$(DEPDIR) nios2/$(DEPDIR) riscv/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) aarch64/$(DEPDIR) arc/$(DEPDIR) arm/$(DEPDIR) bfin/$(DEPDIR) csky/$(DEPDIR) d30v/$(DEPDIR) iq2000/$(DEPDIR) libsysbase/$(DEPDIR) libnosys/$(DEPDIR) lm32/$(DEPDIR) nios2/$(DEPDIR) riscv/$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-local distclean-tags
@@ -4382,7 +4653,7 @@ installcheck-am:
 maintainer-clean: maintainer-clean-recursive
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-	-rm -rf ./$(DEPDIR) aarch64/$(DEPDIR) arc/$(DEPDIR) arm/$(DEPDIR) bfin/$(DEPDIR) csky/$(DEPDIR) d30v/$(DEPDIR) iq2000/$(DEPDIR) libnosys/$(DEPDIR) lm32/$(DEPDIR) nios2/$(DEPDIR) riscv/$(DEPDIR)
+	-rm -rf ./$(DEPDIR) aarch64/$(DEPDIR) arc/$(DEPDIR) arm/$(DEPDIR) bfin/$(DEPDIR) csky/$(DEPDIR) d30v/$(DEPDIR) iq2000/$(DEPDIR) libsysbase/$(DEPDIR) libnosys/$(DEPDIR) lm32/$(DEPDIR) nios2/$(DEPDIR) riscv/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-aminfo \
 	maintainer-clean-generic maintainer-clean-local

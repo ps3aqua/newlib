@@ -5,9 +5,9 @@
 #include <sys/syscalls.h>
 
 #ifdef REENTRANT_SYSCALLS_PROVIDED
-caddr_t _sbrk_r(struct _reent *ptr, ptrdiff_t incr) {
+void * _sbrk_r(struct _reent *ptr, ptrdiff_t incr) {
 #else
-caddr_t _sbrk(ptrdiff_t incr) {
+void * _sbrk(ptrdiff_t incr) {
 	struct _reent *ptr = _REENT;
 #endif
 	if(__syscalls.sbrk_r)

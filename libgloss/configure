@@ -638,6 +638,8 @@ CONFIG_NIOS2_FALSE
 CONFIG_NIOS2_TRUE
 CONFIG_LM32_FALSE
 CONFIG_LM32_TRUE
+CONFIG_LIBSYSBASE_FALSE
+CONFIG_LIBSYSBASE_TRUE
 CONFIG_LIBNOSYS_FALSE
 CONFIG_LIBNOSYS_TRUE
 CONFIG_IQ2000_FALSE
@@ -2985,9 +2987,6 @@ case "${target}" in
 	;;
 esac
 
-if test "${config_libsysbase}" = "true"; then
-  subdirs="$subdirs libsysbase"
-fi
 
    if test x$config_aarch64 = xtrue; then
   CONFIG_AARCH64_TRUE=
@@ -3051,6 +3050,14 @@ fi
 else
   CONFIG_LIBNOSYS_TRUE='#'
   CONFIG_LIBNOSYS_FALSE=
+fi
+
+   if test x$config_libsysbase = xtrue; then
+  CONFIG_LIBSYSBASE_TRUE=
+  CONFIG_LIBSYSBASE_FALSE='#'
+else
+  CONFIG_LIBSYSBASE_TRUE='#'
+  CONFIG_LIBSYSBASE_FALSE=
 fi
 
    if test x$config_lm32 = xtrue; then
@@ -5335,6 +5342,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${CONFIG_LIBNOSYS_TRUE}" && test -z "${CONFIG_LIBNOSYS_FALSE}"; then
   as_fn_error $? "conditional \"CONFIG_LIBNOSYS\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${CONFIG_LIBSYSBASE_TRUE}" && test -z "${CONFIG_LIBSYSBASE_FALSE}"; then
+  as_fn_error $? "conditional \"CONFIG_LIBSYSBASE\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${CONFIG_LM32_TRUE}" && test -z "${CONFIG_LM32_FALSE}"; then

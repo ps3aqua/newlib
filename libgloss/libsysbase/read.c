@@ -8,7 +8,7 @@
 #ifdef REENTRANT_SYSCALLS_PROVIDED
 _ssize_t _read_r(struct _reent *r, int fd, void *ptr, size_t len) {
 #else
-_ssize_t _read(int fd, void *ptr, size_t len) {
+_READ_WRITE_RETURN_TYPE _read(int fd, void *ptr, size_t len) {
 	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.read_r)

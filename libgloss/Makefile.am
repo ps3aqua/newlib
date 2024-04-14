@@ -84,6 +84,9 @@ endif
 if CONFIG_IQ2000
 include iq2000/Makefile.inc
 endif
+if CONFIG_LIBSYSBASE
+include libsysbase/Makefile.inc
+endif
 if CONFIG_LIBNOSYS
 include libnosys/Makefile.inc
 endif

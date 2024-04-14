@@ -7,7 +7,7 @@
 #ifdef REENTRANT_SYSCALLS_PROVIDED
 int _getpid_r(struct _reent *ptr) {
 #else
-int _getpid,(void) {
+int _getpid(void) {
 	struct _reent *ptr = _REENT;
 #endif
 	if(__syscalls.getpid_r)

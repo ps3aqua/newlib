@@ -9,7 +9,7 @@
 int _unlink_r(struct _reent *r, const char *name) {
 #else
 int _unlink(const char *name) {
-	struct _reent *r = REENT;
+	struct _reent *r = _REENT;
 #endif
 	if(__syscalls.unlink_r)
 		return __syscalls.unlink_r(r,name);
