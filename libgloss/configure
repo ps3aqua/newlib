@@ -4989,6 +4989,13 @@ $as_echo "#define MISSING_SYSCALL_NAMES 1" >>confdefs.h
  ;;
 esac
 
+case "${target}" in
+  powerpc64-ps3-elf)
+$as_echo "#define REENTRANT_SYSCALLS_PROVIDED 1" >>confdefs.h
+ ;;
+  *) ;;
+esac
+
 M68K_TARGET=m68k
 case "${target}" in
   fido-*-* | m68*-*-*)

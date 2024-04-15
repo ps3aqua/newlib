@@ -18,6 +18,9 @@
 /* Missing syscall names */
 #undef MISSING_SYSCALL_NAMES
 
+/* Reentrant syscalls */
+#undef REENTRANT_SYSCALLS_PROVIDED
+
 /* Define to the address where bug reports for this package should be sent. */
 #undef PACKAGE_BUGREPORT
 

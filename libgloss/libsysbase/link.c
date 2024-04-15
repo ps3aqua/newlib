@@ -1,7 +1,6 @@
 #include "config.h"
 #include <_ansi.h>
 #include <_syslist.h>
-#include <reent.h>
 #include <errno.h>
 #include <sys/syscalls.h>
 
